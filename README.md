@@ -26,11 +26,19 @@ This API functions as an archive of local shops and restaurants in Washington, D
 * Add an `appsettings.json` file to the directory `TreatShop`.
 * Add the following code to the `appsettings.json` file, with your password in the appropriate location:
   ```
-  {
-    "ConnectionStrings": {
-        "DefaultConnection": "Server=localhost;Port=3306;database=will_greenberg;uid=root;pwd=[YOUR-PASSWORD];"
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Warning",
+      "System": "Information",
+      "Microsoft": "Information"
     }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=3306;database=will_greenberg;uid=root;pwd=epicodus;"
   }
+}
   ```
 * Run `dotnet ef database update --project TreatShop/` to build the database from the Migrations files.
 * To run the application, run `dotnet run --project TreatShop/`.
