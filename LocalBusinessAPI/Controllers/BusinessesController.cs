@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Cors;
 using LocalBusinessAPI.Models;
 
 namespace LocalBusinessAPI.Controllers
 {
+  [EnableCors]
   [Route("api/Businesses")]
   [ApiController]
   public class BusinessesController : ControllerBase
