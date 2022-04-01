@@ -68,18 +68,33 @@ namespace LocalBusinessAPI.Controllers
 
         return NoContent();
     }
-    private bool BusinessExists(int id)
-    {
-        return _db.Businesses.Any(e => e.BusinessId == id);
-    }
     // POST: api/Businesses
     [HttpPost]
-    public async Task<ActionResult<Business>> PostBeer(Business business)
+    public async Task<ActionResult<Business>> PostBusiness(Business business)
     {
         _db.Businesses.Add(business);
         await _db.SaveChangesAsync();
 
         return CreatedAtAction("GetBusiness", new { id = business.BusinessId }, business);
+    }
+    // DELETE: api/Businesses/5
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteBusiness(int id)
+    {
+        var business = await _db.Businesses.FindAsync(id);
+        if (business == null)
+        {
+            return NotFound();
+        }
+
+        _db.Businesses.Remove(business);
+        await _db.SaveChangesAsync();
+
+        return NoContent();
+    }
+    private bool BusinessExists(int id)
+    {
+        return _db.Businesses.Any(e => e.BusinessId == id);
     }
 
   }
