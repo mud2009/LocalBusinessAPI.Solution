@@ -55,7 +55,7 @@ This API has a version 1.0 and a version 2.0, but defaults to v1.0. This ensures
 
 ### Note on CORS
 
-CORS allows cross origin requests to be made. For this API, all cross origins requests are permitted for v1.0. For more information, see the documentation[here](https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-2.2#how-cors).
+CORS allows cross origin requests to be made. For this API, all cross origins requests are permitted for v1.0. For more information, see the documentation [here](https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-2.2#how-cors).
 
 ### Businesses
 
@@ -77,6 +77,7 @@ DELETE /api/businesses/{id}
 | name | string | none | false | Return matches by name.
 | type | string | none | false | Return matches by type of business. |
 | location | string | none | false | Return business matches by location. |
+
 
 ### Random Business
 
