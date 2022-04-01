@@ -78,6 +78,9 @@ DELETE /api/businesses/{id}
 | type | string | none | false | Return matches by type of business. |
 | location | string | none | false | Return business matches by location. |
 
+##### Example query
+
+```http://localhost:5000/api/businesses?api-version=2.0&name=costco```
 
 ### Random Business
 
