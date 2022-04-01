@@ -2,14 +2,16 @@
 using LocalBusinessAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LocalBusinessAPI.Migrations
 {
     [DbContext(typeof(LocalBusinessAPIContext))]
-    partial class LocalBusinessAPIContextModelSnapshot : ModelSnapshot
+    [Migration("20220401211702_MoreData")]
+    partial class MoreData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
