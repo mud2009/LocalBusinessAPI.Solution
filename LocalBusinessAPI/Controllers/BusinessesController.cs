@@ -40,7 +40,6 @@ namespace LocalBusinessAPI.Controllers
         return business;
     }
     // PUT: api/Businesses/5
-    // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPut("{id}")]
     public async Task<IActionResult> PutBusiness(int id, Business business)
     {
@@ -72,6 +71,15 @@ namespace LocalBusinessAPI.Controllers
     private bool BusinessExists(int id)
     {
         return _db.Businesses.Any(e => e.BusinessId == id);
+    }
+    // POST: api/Businesses
+    [HttpPost]
+    public async Task<ActionResult<Business>> PostBeer(Business business)
+    {
+        _db.Businesses.Add(business);
+        await _db.SaveChangesAsync();
+
+        return CreatedAtAction("GetBusiness", new { id = business.BusinessId }, business);
     }
 
   }
