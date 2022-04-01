@@ -8,6 +8,14 @@ namespace LocalBusinessAPI.Models
     {
 
     }
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+      builder.Entity<Business>()
+        .HasData(
+          new Business { BusinessId = 1, Name = "Costco", Type = "Retail", Location = "Over there" }
+        );
+    }
+
     public DbSet<Business> Businesses { get; set; }
   }
 }
