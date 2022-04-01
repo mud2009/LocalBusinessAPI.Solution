@@ -36,7 +36,7 @@ This API functions as an archive of local shops and restaurants in Washington, D
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=will_greenberg;uid=root;pwd=epicodus;"
+    "DefaultConnection": "Server=localhost;Port=3306;database=will_greenberg;uid=root;pwd=[Your-password-here];"
   }
 }
   ```
