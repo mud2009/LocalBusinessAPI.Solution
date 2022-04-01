@@ -16,6 +16,14 @@ namespace LocalBusinessAPI.Controllers
     {
       _db = db;
     }
+    // GET: api/LocalBusiness
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Business>>> Get()
+    {
+      var query = _db.Businesses.AsQueryable();
+
+      return await query.ToListAsync();
+    }
 
   }
 }
