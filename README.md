@@ -48,6 +48,10 @@ This API functions as an archive of local shops and restaurants in Washington, D
 
 Navigate to `http://localhost:5000/api/business` in Postman, which can be downloaded [here](https://www.postman.com/downloads/).
 
+### Swagger Documentation
+
+Launch the project using `dotnet run` and navigate to `http://localhost:5000/swagger` in your browser to view Swagger documentation for this API.
+
 
 ### Note on versioning
 
@@ -92,7 +96,7 @@ http://localhost:5000/api/businesses/random?api-version=2.0
 
 ## Known Bugs
 
-* None so far.
+* Unablet to display the edited GET method on the version 2.0 Swagger documentation.
 
 ## License
 
