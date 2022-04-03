@@ -50,7 +50,7 @@ Navigate to `http://localhost:5000/api/business` in Postman, which can be downlo
 
 ### Swagger Documentation
 
-Launch the project using `dotnet run` and navigate to `http://localhost:5000/swagger` in your browser to view Swagger documentation for this API.
+Launch the project using `dotnet run --project LocalBusinessAPI/` and navigate to `http://localhost:5000/swagger` in your browser to view Swagger documentation for this API.
 
 
 ### Note on versioning
