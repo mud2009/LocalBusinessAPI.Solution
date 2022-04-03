@@ -96,7 +96,7 @@ http://localhost:5000/api/businesses/random?api-version=2.0
 
 ## Known Bugs
 
-* Unablet to display the edited GET method on the version 2.0 Swagger documentation.
+* Unable to display the updated GET method on the version 2.0 Swagger documentation.
 
 ## License
 
