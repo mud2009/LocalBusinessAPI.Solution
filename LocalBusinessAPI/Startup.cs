@@ -7,6 +7,9 @@ using Microsoft.EntityFrameworkCore;
 using LocalBusinessAPI.Models;
 // package required for versioning
 using Microsoft.AspNetCore.Mvc;
+// package required for swagger doc
+using Microsoft.OpenApi.Models;
+using System.Linq;
 
 namespace LocalBusinessAPI
 {
@@ -31,6 +34,11 @@ namespace LocalBusinessAPI
             services.AddDbContext<LocalBusinessAPIContext>(opt =>
                 opt.UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
             services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "LocalBusinessAPI", Version = "v1" });
+                c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +47,8 @@ namespace LocalBusinessAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "LocalBusinessAPI v1"));
             }
 
             // app.UseHttpsRedirection();

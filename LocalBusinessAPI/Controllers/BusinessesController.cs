@@ -103,15 +103,16 @@ namespace LocalBusinessAPI.Controllers
   [ApiVersion("2.0")]
   [Route ("api/Businesses")]
   [ApiController]
-  public class BusinessesV2Controller : ControllerBase
+  public class BusinessesVTwoController : ControllerBase
   {
     private readonly LocalBusinessAPIContext _db;
 
-    public BusinessesV2Controller(LocalBusinessAPIContext db)
+    public BusinessesVTwoController(LocalBusinessAPIContext db)
     {
       _db = db;
     }
     // GET: api/Businesses
+    [MapToApiVersion("2.0")]
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Business>>> Get(string name, string type, string location)
     {
@@ -119,15 +120,15 @@ namespace LocalBusinessAPI.Controllers
 
       if (name != null)
       {
-        query = query.Where(entry => entry.Name == name);
+        query = query.Where(entry => entry.Name.Contains(name));
       }
       if (type != null)
       {
-        query = query.Where(entry => entry.Type == type);
+        query = query.Where(entry => entry.Type.Contains(type));
       }
       if (location != null)
       {
-        query = query.Where(entry => entry.Location == location);
+        query = query.Where(entry => entry.Location.Contains(location));
       }
 
       return await query.ToListAsync();
